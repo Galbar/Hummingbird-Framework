@@ -1,14 +1,14 @@
-CC        := g++-4.8
+CC        := g++
 ARCH      := $(shell getconf LONG_BIT)
 
 IDIR      := HEADERS
 SDIR      := SOURCES
 BDIR      := BUILD
-DEPS_IDIR := DEPENDENCIES/INCLUDE
+DEPS_IDIR := DEPENDENCIES/include
 
-CFLAGS_32 := -LDEPENDENCIES/lib/x86
-CFLAGS_64 := -LDEPENDENCIES/lib/x86_64
-CFLAGS    := -I$(IDIR) -I$(DEPS_IDIR) -L$(CFLAGS_$(ARCH)) -std=c++11 -Wall
+LIB_DIR_32 := DEPENDENCIES/lib/x86
+LIB_DIR_64 := DEPENDENCIES/lib/x86_64
+CFLAGS    := -I$(IDIR) -I$(DEPS_IDIR) -L$(LIB_DIR_$(ARCH)) -std=c++11 -Wall -Wl,-rpath='$$ORIGIN/lib'
 LIBS      := -lsfml-audio -lsfml-graphics -lsfml-system -lsfml-window
 
 EXEC      := exec
@@ -25,6 +25,8 @@ $(BDIR)/%.o: $(SDIR)/%.cpp $(DEPS) $(BDIR)/.done
 
 $(BDIR)/.done:
 	mkdir $(BDIR)
+	mkdir $(BDIR)/lib
+	cp $(LIB_DIR_$(ARCH))/* $(BDIR)/lib -rf
 	echo "file for checking if $(BDIR) exists" >$(BDIR)/.done
 
 $(BDIR)/$(EXEC): $(OBJ)
