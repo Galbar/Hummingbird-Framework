@@ -27,7 +27,9 @@ public:
 	int loadFromFile(const std::string& path, const sf::IntRect& area = sf::IntRect())
 	{
 		sf::Texture tex;
-		tex.loadFromFile(path, area);
+		if (!isLoaded(path, area))
+			tex.loadFromFile(path, area);
+	
 		return this->addResource(makeTexId(path, area), tex);
 	}
 	bool isLoaded(const std::string& path, const sf::IntRect& area = sf::IntRect()) const
