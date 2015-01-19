@@ -1,4 +1,5 @@
 #include "TextureManager.h"
+using namespace hb;
 
 TextureManager* TextureManager::s_instance = NULL;
 

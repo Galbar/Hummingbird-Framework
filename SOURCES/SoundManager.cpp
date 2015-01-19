@@ -1,4 +1,5 @@
 #include "SoundManager.h"
+using namespace hb;
 
 SoundManager* SoundManager::s_instance = NULL;
 
