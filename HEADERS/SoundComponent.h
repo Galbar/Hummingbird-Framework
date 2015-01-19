@@ -1,5 +1,5 @@
-#ifndef SOUND_COMPONENT
-#define SOUND_COMPONENT
+#ifndef SOUND_COMPONENT_H
+#define SOUND_COMPONENT_H
 #include <SFML/Audio.hpp>
 #include "GameObject.h"
 
