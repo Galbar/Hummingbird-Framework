@@ -66,7 +66,7 @@ public:
 	{
 		return (m_info_table.find(id) != m_info_table.end());
 	}
-	// Returns wether the Resource resource with path path is loaded
+	// Returns wether the Resource resource with ResourceId resource_id is loaded
 	bool isLoaded(const ResourceId& resource_id) const
 	{
 		return (m_id_table.find(resource_id) != m_id_table.end());
