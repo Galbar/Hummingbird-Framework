@@ -1,5 +1,6 @@
 #ifndef GAME_OBJECT_H
 #define GAME_OBJECT_H
+#include <Box2D/Box2D.h>
 #include <vector>
 #include <memory>
 #include "Vector2d.h"
