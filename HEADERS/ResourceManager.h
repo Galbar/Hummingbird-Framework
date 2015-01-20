@@ -1,5 +1,5 @@
-#ifndef RESOURCE_MANAGER_H
-#define RESOURCE_MANAGER_H
+#ifndef HB_RESOURCE_MANAGER_H
+#define HB_RESOURCE_MANAGER_H
 #include <unordered_map>
 #include <cassert>
 

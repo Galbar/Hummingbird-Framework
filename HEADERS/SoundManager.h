@@ -1,5 +1,5 @@
-#ifndef SOUND_MANAGER
-#define SOUND_MANAGER
+#ifndef HB_SOUND_MANAGER
+#define HB_SOUND_MANAGER
 #include <string>
 #include <SFML/Audio.hpp>
 #include "ResourceManager.h"

@@ -3,6 +3,7 @@
 #include <Box2D/Box2D.h>
 #include <vector>
 #include <memory>
+#include <iostream>
 #include "Transform.h"
 #include "Vector2d.h"
 
@@ -16,27 +17,30 @@ namespace hb
 		public:
 			friend class GameObject;
 			Component()
-			{m_game_object = nullptr;}
+			{
+				m_game_object = nullptr;
+				m_relative = true;
+			}
 			virtual ~Component(){}
+			virtual void preUpdate(){}
 			virtual void update(){}
+			virtual void postUpdate(){}
+			GameObject* getGameObject() const {return m_game_object;}
 
 		private:
 			void setGameObject(GameObject* game_object)
 			{m_game_object = game_object;}
 			GameObject* m_game_object;
-
-		protected:
-			GameObject* getGameObject() const
-			{return m_game_object;}
+			bool m_relative;
 		};
 
 		GameObject();
 		~GameObject();
 		void update();
-		Component* addComponent(const Component& component);
+		void addComponent(Component* component);
 
 	private:
-		std::vector<Component> m_components;
+		std::vector<Component*> m_components;
 	};
 }
 #endif

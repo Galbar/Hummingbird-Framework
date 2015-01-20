@@ -7,20 +7,24 @@ Transform()
 
 
 GameObject::~GameObject()
-{}
+{
+	for (Component* component : m_components)
+		delete component;
+}
 
 void GameObject::update()
 {
-	for (Component& component : m_components)
-	{
-		component.update();
-	}
+	for (Component* component : m_components)
+		component->preUpdate();
+	for (Component* component : m_components)
+		component->update();
+	for (Component* component : m_components)
+		component->postUpdate();
 }
 
 
-GameObject::Component* GameObject::addComponent(const Component& component)
+void GameObject::addComponent(Component* component)
 {
 	m_components.push_back(component);
-	m_components[m_components.size() - 1].setGameObject(this);
-	return &m_components[m_components.size() - 1];
+	m_components[m_components.size() - 1]->setGameObject(this);
 }

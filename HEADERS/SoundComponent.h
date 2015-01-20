@@ -1,5 +1,5 @@
-#ifndef SOUND_COMPONENT_H
-#define SOUND_COMPONENT_H
+#ifndef HB_SOUND_COMPONENT_H
+#define HB_SOUND_COMPONENT_H
 #include <SFML/Audio.hpp>
 #include "DataComponent.h"
 #include "Transform.h"
