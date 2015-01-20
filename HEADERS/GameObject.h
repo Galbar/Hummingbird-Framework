@@ -14,7 +14,8 @@ namespace hb
 		{
 		public:
 			friend class GameObject;
-			Component(){}
+			Component()
+			{m_game_object = nullptr;}
 			virtual ~Component(){}
 			virtual void update(){}
 
@@ -24,7 +25,7 @@ namespace hb
 			GameObject* m_game_object;
 
 		protected:
-			GameObject* getGameObject()
+			GameObject* getGameObject() const
 			{return m_game_object;}
 		};
 
