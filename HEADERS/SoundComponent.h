@@ -1,22 +1,18 @@
 #ifndef SOUND_COMPONENT_H
 #define SOUND_COMPONENT_H
 #include <SFML/Audio.hpp>
-#include "GameObject.h"
+#include "DataComponent.h"
 #include "Transform.h"
 
 namespace hb
 {
-	class SoundComponent : public GameObject::Component, public Transform
+	class SoundComponent : public DataComponent<sf::Sound>, public Transform
 	{
 	public:
-		SoundComponent();
-		~SoundComponent();
 		void setSound(const sf::Sound& sound);
 		sf::Sound& getSound();
+		const sf::Sound& getSound() const;
 		void update();
-
-	private:
-		sf::Sound m_sound;
 	};
 }
 #endif
