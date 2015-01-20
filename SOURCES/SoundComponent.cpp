@@ -23,8 +23,8 @@ sf::Sound& SoundComponent::getSound()
 
 void SoundComponent::update()
 {
-	float x = getGameObject()->getPosition().x;
-	float y = getGameObject()->getPosition().y;
-	float z = getGameObject()->getZIndex();
+	float x = getPosition().x + getGameObject()->getPosition().x;
+	float y = getPosition().y + getGameObject()->getPosition().y;
+	float z = getZIndex() + getGameObject()->getZIndex();
 	m_sound.setPosition(x, y, z);
 }

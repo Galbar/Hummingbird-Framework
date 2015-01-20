@@ -2,10 +2,11 @@
 #define SOUND_COMPONENT_H
 #include <SFML/Audio.hpp>
 #include "GameObject.h"
+#include "Transform.h"
 
 namespace hb
 {
-	class SoundComponent : public GameObject::Component
+	class SoundComponent : public GameObject::Component, public Transform
 	{
 	public:
 		SoundComponent();
