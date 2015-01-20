@@ -36,6 +36,30 @@ void GameObject::setZIndex(double z_index)
 }
 
 
+double GameObject::getRotation() const
+{
+	return m_rotation_angle;
+}
+
+
+void GameObject::setRotation(double angle)
+{
+	m_rotation_angle = angle;
+}
+
+
+const Vector2d& GameObject::getScale() const
+{
+	return m_scale;
+}
+
+
+void GameObject::setScale(const Vector2d& scale)
+{
+	m_scale = scale;
+}
+
+
 void GameObject::update()
 {
 	for (Component& component : m_components)
