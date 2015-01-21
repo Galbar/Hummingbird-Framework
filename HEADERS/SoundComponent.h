@@ -12,7 +12,7 @@ namespace hb
 		void setSound(const sf::Sound& sound);
 		sf::Sound& getSound();
 		const sf::Sound& getSound() const;
-		void update();
+		void update() override;
 	};
 }
 #endif

@@ -17,17 +17,17 @@ namespace hb
 
 	};
 	
-	Vector2d operator -(const Vector2d& right);
-	Vector2d& operator +=(Vector2d& left, const Vector2d& right);
-	Vector2d& operator -=(Vector2d& left, const Vector2d& right);
-	Vector2d operator +(const Vector2d& left, const Vector2d& right);
-	Vector2d operator -(const Vector2d& left, const Vector2d& right);
-	Vector2d operator *(const Vector2d& left, double right);
-	Vector2d operator *(double left, const Vector2d& right);
-	Vector2d& operator *=(Vector2d& left, double right);
-	Vector2d operator /(const Vector2d& left, double right);
-	Vector2d& operator /=(Vector2d& left, double right);
-	bool operator ==(const Vector2d& left, const Vector2d& right);
-
 }
+
+hb::Vector2d operator -(const hb::Vector2d& right);
+hb::Vector2d& operator +=(hb::Vector2d& left, const hb::Vector2d& right);
+hb::Vector2d& operator -=(hb::Vector2d& left, const hb::Vector2d& right);
+hb::Vector2d operator +(const hb::Vector2d& left, const hb::Vector2d& right);
+hb::Vector2d operator -(const hb::Vector2d& left, const hb::Vector2d& right);
+hb::Vector2d operator *(const hb::Vector2d& left, double right);
+hb::Vector2d operator *(double left, const hb::Vector2d& right);
+hb::Vector2d& operator *=(hb::Vector2d& left, double right);
+hb::Vector2d operator /(const hb::Vector2d& left, double right);
+hb::Vector2d& operator /=(hb::Vector2d& left, double right);
+bool operator ==(const hb::Vector2d& left, const hb::Vector2d& right);
 #endif
