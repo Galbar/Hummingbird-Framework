@@ -2,7 +2,6 @@
 #define HB_RENDER_WINDOW_MANAGER_H
 #include <queue>
 #include <SFML/Graphics.hpp>
-#include "DataComponent.h"
 
 namespace hb
 {

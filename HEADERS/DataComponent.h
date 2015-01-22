@@ -1,7 +1,5 @@
 #ifndef HB_DATA_COMPONENT_H
 #define HB_DATA_COMPONENT_H
-#include <SFML/Graphics.hpp>
-#include <iostream>
 #include "GameObject.h"
 
 namespace hb

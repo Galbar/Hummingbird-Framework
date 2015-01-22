@@ -1,11 +1,7 @@
 #ifndef HB_GAME_OBJECT_H
 #define HB_GAME_OBJECT_H
-#include <Box2D/Box2D.h>
 #include <vector>
-#include <memory>
-#include <iostream>
 #include "Transform.h"
-#include "Vector2d.h"
 
 namespace hb
 {
